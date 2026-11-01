@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#09090f">
+  <title>NOVA SHOP</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    :root{--bg:#09090f;--purple:#8b5cf6;--muted:#9694a8;--white:#f7f5ff}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#38205e 0%,#11101b 38%,var(--bg) 72%);color:var(--white);font:15px Inter,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+    .wrap{max-width:520px;margin:auto;padding:22px 16px 36px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}
+    .brand{display:flex;align-items:center;gap:11px}.logo{width:43px;height:43px;border-radius:14px;background:linear-gradient(145deg,#a855f7,#4c1d95);display:grid;place-items:center;box-shadow:0 8px 30px #8b5cf655;font-weight:900;font-size:19px}
+    .brand b{display:block;letter-spacing:2px;font-size:17px}.brand small{color:var(--muted);font-size:11px;letter-spacing:1.4px}.status{border:1px solid #ffffff18;border-radius:20px;padding:7px 10px;color:#c4b5fd;font-size:11px}
+    .hero{padding:22px 20px;border:1px solid #a78bfa30;border-radius:24px;background:linear-gradient(135deg,#24143d,#171525 65%,#171323);position:relative;overflow:hidden;margin-bottom:24px}.hero:after{content:"✦";position:absolute;right:18px;top:12px;font-size:90px;color:#c084fc18}
+    .eyebrow{color:#c4b5fd;text-transform:uppercase;letter-spacing:2px;font-size:10px;font-weight:700}h1{font-size:29px;line-height:1.08;margin:10px 0 9px;max-width:270px}.hero p{color:#c5c1d3;line-height:1.5;margin:0;max-width:290px;font-size:13px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;margin:0 2px 13px}.section-head h2{font-size:18px;margin:0}.section-head span{color:var(--muted);font-size:11px}
+    .card{background:linear-gradient(145deg,#191827,#11111a);border:1px solid #ffffff12;border-radius:19px;padding:16px;margin-bottom:12px}
+    .prices{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-bottom:15px}.price{border:1px solid #ffffff13;background:#1d1b2b;border-radius:14px;padding:12px}.price strong{display:block;font-size:16px}.price span{display:block;color:#c4b5fd;font-size:12px;margin-top:4px}
+    label{display:block;color:#c9c5d8;font-size:12px;margin-bottom:9px}.qtyrow{display:flex;align-items:center;gap:10px}.qtyrow input{min-width:0;flex:1;background:#0c0b13;border:1px solid #ffffff20;color:white;border-radius:13px;padding:14px;font-size:18px;font-weight:700;outline:none}.qtyrow input:focus{border-color:var(--purple)}.unit{color:#c4b5fd;font-weight:700}
+    .quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.quick button{border:1px solid #ffffff17;background:#201d30;color:#dcd6ef;border-radius:11px;padding:10px 3px;font-size:12px}.quick button.active{border-color:#a78bfa;background:#38245a;color:#fff}
+    .total{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:13px;border-top:1px solid #ffffff14}.total span{color:var(--muted);font-size:12px}.total strong{font-size:19px;color:#d8b4fe}
+    .hint{font-size:11px;color:var(--muted);line-height:1.45;margin:11px 2px 0}.manager{display:flex;gap:12px;align-items:center}.manager-icon{width:38px;height:38px;display:grid;place-items:center;background:#29203d;border-radius:13px;font-size:18px}.manager b{font-size:13px}.manager small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+    .primary,.secondary{width:100%;border:0;border-radius:15px;padding:16px;color:white;font-size:14px;font-weight:800;letter-spacing:.2px;margin-top:14px}.primary{background:linear-gradient(100deg,#7c3aed,#a855f7);box-shadow:0 8px 26px #7c3aed40}.secondary{background:#242033;border:1px solid #ffffff17;margin-top:9px}
+    .foot{text-align:center;color:#777387;font-size:10px;margin-top:22px;letter-spacing:.5px}.notice{display:none;padding:12px;border-radius:12px;background:#1d1730;border:1px solid #8b5cf655;color:#ddd3ff;font-size:12px;line-height:1.45;margin-top:12px}button{cursor:pointer}button:active{transform:scale(.98)}
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <header class="top"><div class="brand"><div class="logo">N</div><div><b>NOVA SHOP</b><small>TELEGRAM STARS</small></div></div><div class="status">✦ Магазин Stars</div></header>
+  <section class="hero"><div class="eyebrow">Добро пожаловать</div><h1>Твои звёзды ближе</h1><p>Выбери пакет Telegram Stars и отправь заявку менеджеру. Он поможет завершить заказ.</p></section>
+  <div class="section-head"><h2>Каталог Stars</h2><span>Цены в гривнах</span></div>
+  <section class="card">
+    <div class="prices">
+      <div class="price"><strong>100 ⭐</strong><span>85 грн</span></div>
+      <div class="price"><strong>250 ⭐</strong><span>210 грн</span></div>
+      <div class="price"><strong>500 ⭐</strong><span>410 грн</span></div>
+      <div class="price"><strong>1 000 ⭐</strong><span>880 грн</span></div>
+      <div class="price"><strong>2 500 ⭐</strong><span>2 100 грн</span></div>
+    </div>
+    <label for="quantity">Выбери пакет</label>
+    <div class="qtyrow"><input id="quantity" type="number" min="100" step="1" value="100" inputmode="numeric"><span class="unit">⭐ STARS</span></div>
+    <div class="quick"><button data-qty="100" class="active">100</button><button data-qty="250">250</button><button data-qty="500">500</button><button data-qty="1000">1 000</button></div>
+    <div class="total"><span>Стоимость</span><strong id="total">85 грн</strong></div>
+    <p class="hint">Цена рассчитывается для указанных пакетов. Для другого количества уточни стоимость у менеджера.</p>
+  </section>
+  <section class="card">
+    <div class="manager"><div class="manager-icon">💬</div><div><b>Менеджер: @N0VAmanager1</b><small>Подтвердит заказ и расскажет о дальнейших шагах</small></div></div>
+    <button class="primary" id="order">ОТПРАВИТЬ ЗАЯВКУ ↗</button>
+    <button class="secondary" id="contact">НАПИСАТЬ МЕНЕДЖЕРУ</button>
+    <div class="notice" id="notice"></div>
+  </section>
+  <div class="foot">NOVA SHOP · DIGITAL GOODS</div>
+</main>
+<script>
+  const tg=window.Telegram?.WebApp;if(tg){tg.ready();tg.expand();}
+  const prices={100:85,250:210,500:410,1000:880,2500:2100};
+  const input=document.getElementById('quantity'),total=document.getElementById('total'),notice=document.getElementById('notice');
+  const buttons=[...document.querySelectorAll('[data-qty]')];
+  function update(){const q=Number(input.value);total.textContent=prices[q]!==undefined?prices[q].toLocaleString('ru-RU')+' грн':'Уточнить у менеджера';buttons.forEach(b=>b.classList.toggle('active',Number(b.dataset.qty)===q));}
+  buttons.forEach(b=>b.addEventListener('click',()=>{input.value=b.dataset.qty;update();}));input.addEventListener('input',update);
+  document.getElementById('order').addEventListener('click',()=>{
+    const q=Number(input.value);if(!Number.isInteger(q)||q<1||q>100000){notice.style.display='block';notice.textContent='Укажи корректное количество звёзд.';return;}
+    const payload={type:'nova_stars_order',quantity:q,price_uah:prices[q]??null,manager:'N0VAmanager1'};
+    if(tg){tg.sendData(JSON.stringify(payload));notice.style.display='block';notice.textContent='Заявка отправлена боту. Вернись в чат Telegram — менеджер продолжит оформление.';}
+    else{notice.style.display='block';notice.textContent='Предварительный просмотр. Открой Mini App из Telegram-бота, чтобы отправить заявку.';}
+  });
+  document.getElementById('contact').addEventListener('click',()=>{if(tg)tg.openTelegramLink('https://t.me/N0VAmanager1');else window.open('https://t.me/N0VAmanager1','_blank');});
+  update();
+</script>
+</body></html>
